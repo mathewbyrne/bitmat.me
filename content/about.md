@@ -6,4 +6,5 @@ const eleventyNavigation = {
 ---
 # About
 
-I am a person that writes stuff.
+Software engineer and hobyist.  These are just some public notes to help get my
+own thoughts in order about things I'm tinkering with or experiences I'm having.
