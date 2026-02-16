@@ -1,6 +1,6 @@
 export default {
-	title: "Mathew Byrne",
-	url: "https://mathewbyrne.com/",
+	title: "bitmat",
+	url: "https://bitmat.me/",
 	language: "en",
 	description: "Thoughts on coding, gaming, and art.",
 	author: {
