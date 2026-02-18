@@ -6,6 +6,6 @@ export default {
 	author: {
 		name: "Mathew Byrne",
 		email: "mathewbyrne@gmail.com",
-		url: "https://mathewbyrne.com/about-me/"
+		url: "https://bitmat.me/about-me/"
 	}
 }
