@@ -1,37 +1,38 @@
 /* Defaults */
 :root {
-	--font-family: -apple-system, system-ui, sans-serif;
-	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+	--font-family: 'Source Serif 4', serif;
+	--font-family-copy: var(--font-family);
+	--font-family-heading: 'IBM Plex Sans', system-ui, sans-serif;
+	--font-family-monospace: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 /* Theme colors */
 :root {
-	--color-gray-20: #e0e0e0;
-	--color-gray-50: #C0C0C0;
-	--color-gray-90: #333;
+	--bg: #1b1f24;
+	--bg-elevated: #232830;
+	--border: #2f3540;
 
-	--background-color: #fff;
+	--text: #e6e3df;
+	--text-muted: #a8b0ba;
 
-	--text-color: var(--color-gray-90);
-	--text-color-link: #082840;
-	--text-color-link-active: #5f2b48;
-	--text-color-link-visited: #17050F;
+	--accent-soft: #f2b8a0;
+	--accent-soft-hover: #f6c6b2;
+
+	--accent-strong: #c96a3d;
+	--accent-strong-deep: #a9542e;
+
+	--background-color: var(--bg);
+
+	--text-color: var(--text);
+	--text-color-link: var(--accent-soft);
+	--text-color-link-active: var(--accent-soft-hover);
+	--text-color-link-visited: var(--accent-strong);
 
 	--syntax-tab-size: 2;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color-gray-20: #e0e0e0;
-		--color-gray-50: #C0C0C0;
-		--color-gray-90: #dad8d8;
-
-		/* --text-color is assigned to --color-gray-_ above */
-		--text-color-link: #1493fb;
-		--text-color-link-active: #6969f7;
-		--text-color-link-visited: #a6a6f8;
-
-		--background-color: #15202b;
 	}
 }
 
@@ -49,7 +50,7 @@ html,
 body {
 	padding: 0;
 	margin: 0 auto;
-	font-family: var(--font-family);
+	font-family: var(--font-family-copy);
 	color: var(--text-color);
 	background-color: var(--background-color);
 }
@@ -95,9 +96,6 @@ iframe {
 p:last-child {
 	margin-bottom: 0;
 }
-p {
-	line-height: 1.5;
-}
 
 li {
 	line-height: 1.5;
@@ -123,7 +121,7 @@ main :first-child {
 }
 
 header {
-	border-bottom: 1px dashed var(--color-gray-20);
+	border-bottom: 1px dashed var(--accent-strong-deep);
 }
 
 #skip-link {
@@ -131,7 +129,7 @@ header {
 	background: var(--background-color);
 	color: var(--text-color);
 	padding: 0.5rem 1rem;
-	border: 1px solid var(--color-gray-90);
+	border: 1px solid var(--accent-strong);
 	border-radius: 2px;
 }
 
@@ -299,5 +297,40 @@ header {
 picture img {
 	display: block;
 	margin: 0 auto;
+}
+
+/* Typography */
+
+h1, h2, h3, h4, h5 {
+	font-family: var(--font-family-heading);
+	font-weight: 600;
+}
+
+body {
+	line-height: 1.75;
+	font-weight: 400;
+	font-size: 18px;
+}
+
+h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-top: 3rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
 }
 
