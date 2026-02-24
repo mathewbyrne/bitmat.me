@@ -2,7 +2,7 @@
 title: Dangerous Dave 2 Port
 description: Introduction to this hobbyist reverse engineering project.
 date: 2026-02-15
-tags: Engineering, Reverse Engineering, MS-DOS, Dave 2, Gaming
+tags: engineering,reverse-engineering,ms-dos,dave-2,gaming
 ---
 
 While reminiscing about my youth – spent not with an NES, but with a stack of
@@ -125,7 +125,7 @@ Huh, well that's disheartening, an immediate road-block.  A quick search for
 some of these "strings" doesn't reveal anything obvious.  But it turns out
 there's a common trick DOS engineers used to ship binaries on 3.5" floppy disks.
 
-More to come.
+[More to come&hellip;](../dave-2-2-unpack/dave-2-2-unpack.md)
 
 [^1]: the feasibility of this remains to be seen, since at least some amount
 of data is encoded in the executable directly

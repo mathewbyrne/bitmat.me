@@ -1,18 +1,24 @@
-/* Message Box */
-.message-box {
-	--color-message-box: #ffc;
-
-	display: block;
-	background-color: var(--color-message-box);
-	color: var(--color-gray-90);
-	padding: 1em 0.625em; /* 16px 10px /16 */
-}
-.message-box ol {
-	margin-top: 0;
+.callout {
+    background: var(--bg-elevated);
+    padding: 1.4rem 1.6rem;
+    margin: 2.5rem 0;
+    border-radius: 10px;
 }
 
-@media (prefers-color-scheme: dark) {
-	.message-box {
-		--color-message-box: #082840;
-	}
+.callout__title {
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.callout__body :first-child {
+    margin-top: 0;
+}
+
+.callout__body :last-child {
+    margin-bottom: 0;
 }
