@@ -344,12 +344,22 @@ blockquote {
 
 
 .hero-image {
-	border-radius: 50%;
-	display: flex;
-	border: 4px solid var(--accent-strong);
-	width: 15rem;
-	height: 15rem;
-	overflow: hidden;
-	margin: 6rem auto;
+    border-radius: 50%;
+    border: 4px solid var(--accent-strong);
+    overflow: hidden;
+	    outline: 4px solid var(--background-color);
+    outline-offset: -8px;
+
+	width: min(20rem, 90vw);
+    aspect-ratio: 1 / 1;
+
+    margin: clamp(3rem, 8vh, 8rem) auto;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 

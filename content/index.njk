@@ -2,7 +2,7 @@
 const numberOfLatestPostsToShow = 3;
 ---
 <div class="hero-image">
-	<img src="/img/portrait.png" />
+	<img src="./img/portrait.png" alt="Sometimes I like to draw" />
 </div>
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
