@@ -1,5 +1,5 @@
 export default {
-	title: "bitmat",
+	title: "bitmat.me",
 	url: "https://bitmat.me/",
 	language: "en",
 	description: "Thoughts on coding, gaming, and art.",
