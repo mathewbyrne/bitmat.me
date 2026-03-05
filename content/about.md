@@ -7,7 +7,6 @@ const eleventyNavigation = {
 
 # About
 
-Software engineer and hobyist. These are just some public notes to help get my
-own thoughts in order about things I'm tinkering with.
+Software engineer and hobyist. These are just some public notes around projects I'm tinkering with.
 
-[Sometimes I paint miniatures](https://www.instagram.com/bitmat_studio)
+[Sometimes I paint miniatures](https://www.instagram.com/bitmat_studio).
