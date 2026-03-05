@@ -1,5 +1,5 @@
 ---
-title: Compression in Dave 2
+title: Decoding the Asset Compression in Dangerous Dave 2
 description: Understanding how the various game assets in Dangerous Dave and the Haunted Mansion are encoded and starting to implement our own loaders.
 date: 2026-03-05
 tags: engineering,reverse-engineering,ms-dos,dave-2,gaming,ghidra
