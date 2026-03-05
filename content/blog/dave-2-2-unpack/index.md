@@ -6,12 +6,10 @@ tags: engineering,reverse-engineering,ms-dos,dave-2,gaming,ghidra
 ---
 
 So <a href="../dave-2-port/dave-2-port.md">in the last post</a> we got stuck
-looking at an executable full of garbled strings.  In this post I’ll walk
+looking at an executable full of garbled strings. In this post I’ll walk
 through how I got past that hurdle and began disassembling the executable. ##
 
-## Our first Rosetta Stone
-
-> It would not be our last.
+## Our first Rosetta Stone [^2]
 
 So while searching through these strings, one string in particular stood out:
 
@@ -39,12 +37,12 @@ utility, and its inverse,
 [`UNLZEXE`](https://keenwiki.shikadi.net/wiki/UNLZEXE).
 
 So armed with a 16-bit version of `UNLZEXE` I fired up DOSBox and ran it over
-`DAVE.EXE`.  Lo and behold, our executable now has strings:
+`DAVE.EXE`. Lo and behold, our executable now has strings:
 
 <img src="./strings.png" alt="Glorious strings" />
 
 This was my first real win on this project, and it no longer seemed like purely
-an academic exercise.  I avoided getting side-tracked here into the details of
+an academic exercise. I avoided getting side-tracked here into the details of
 specifically how this extraction worked in practice, and decided to proceed
 under the assumption that we could get to work reverse engineering the output
 executable.
@@ -66,11 +64,11 @@ stage I was still stumbling around, unsure what was realistically achievable.
 <img src="./ghidra-import.png" alt="Ghidra detects executable type" />
 
 Importing the unpacked executable is daunting, but gave me a lot more confidence
-that I was on the right track.  Immediately I could see several hundred
+that I was on the right track. Immediately I could see several hundred
 functions, each named purely by its address in memory.
 
 For a DOS game written by a small team in a couple of months, a few hundred
-functions seemed plausible.  Even then, scanning the disassembly suggested there
+functions seemed plausible. Even then, scanning the disassembly suggested there
 were large regions that might yet contain additional functions.
 
 <div class="callout">
@@ -84,7 +82,7 @@ were large regions that might yet contain additional functions.
 		</div>
 </div>
 
-Ghidra immediately detected a 16-bit MS-DOS MZ executable[^1].  It also marked
+Ghidra immediately detected a 16-bit MS-DOS MZ executable[^1]. It also marked
 something called [_Real Mode_](https://en.wikipedia.org/wiki/Real_mode), which
 relates to the 16-bit segmented addressing model used by MS-DOS.
 
@@ -119,14 +117,14 @@ address](https://en.wikipedia.org/wiki/X86_memory_segmentation), with the
 segment `0x1000` and an offset of `0x0000`.
 
 My first instinct here is to try and understand a little bit about how MS-DOS
-would execute this file.  I guess that Ghidra was mapping the executable into a
+would execute this file. I guess that Ghidra was mapping the executable into a
 synthetic memory layout for analysis and appeared to choose `0x1000` as an
 arbitrary base for mapping the load image into memory. This isn’t a DOS
 requirement — it’s simply a convenient paragraph-aligned segment used for
 analysis.
 
-My next instinct was to understand a little more about Ghidra.  Fortunately they
-provide some pretty nice educational content in their repository.  Their
+My next instinct was to understand a little more about Ghidra. Fortunately they
+provide some pretty nice educational content in their repository. Their
 [Introduction to
 Ghidra](https://html-preview.github.io/?url=https://github.com/NationalSecurityAgency/ghidra/blob/master/GhidraDocs/GhidraClass/Beginner/Introduction_to_Ghidra_Student_Guide.html)
 class was particularly useful for getting started understanding the suite of
@@ -144,8 +142,8 @@ while this is usually true, it's also true that seemingly simple sets of
 instructions can map to multiple lines of C code.
 
 Ghidra provides a lot of tooling for labelling and annotating different parts of
-the application.  It also supports being able to type memory blocks with both C
-primitives, but also defined structs.  Ghidra does surprisingly well at
+the application. It also supports being able to type memory blocks with both C
+primitives, but also defined structs. Ghidra does surprisingly well at
 inferring the size and structure of memory regions in use, and once you can
 correctly assign types to memory and registers, the decompilation can get quite
 close to something you could compile.
@@ -159,20 +157,20 @@ like this:
 1. Explore the executable, labelling and typing anything we can so that we can
    start to understand the program logic and flow.
 2. As we begin understanding different subsystems, we start building modern
-	 reimplementations — probably assets first, then graphics, sound, input, etc.
+   reimplementations — probably assets first, then graphics, sound, input, etc.
 3. Locate the main game loops and start structuring our application to
-	 replicate.
+   replicate.
 4. Understand gameplay systems and start reimplementing those — player movement,
-	 entity management, collision.
+   entity management, collision.
 5. Continue repeating these steps until we have a working reimplementation and
-	 have exhausted or documented all the code paths.
+   have exhausted or documented all the code paths.
 
 At this point I still don’t have a good understanding of the scope of this work,
 or how long it will take. But each session I spend tracing through the assembly
 and understanding what I'm looking at, I make a little more progress.
 
 I've started a [codebase here](https://github.com/mathewbyrne/dave-2-port) where
-I'm beginning to implement the above.  From here on out the articles will
+I'm beginning to implement the above. From here on out the articles will
 probably be focussed on specific subsystems that I discover, how I traced them,
 and how I plan to implement them.
 
@@ -180,3 +178,5 @@ Next up, I’ll start tracing the game’s asset loading routines and begin writ
 our own loader.
 
 [^1]: https://wiki.osdev.org/MZ
+
+[^2]: the first of many
