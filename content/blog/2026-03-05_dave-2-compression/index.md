@@ -5,7 +5,7 @@ date: 2026-03-05
 tags: engineering,reverse-engineering,ms-dos,dave-2,gaming,ghidra
 ---
 
-For the first piece of actual reverse engineering I was going to take a look at assets. There were a few reasons this seemed like a good entry point given my limited experience with reverse engineering techniques:
+For the first piece of actual reverse engineering [on this project](../dave-2-port/) I was going to take a look at assets. There were a few reasons this seemed like a good entry point given my limited experience with reverse engineering techniques:
 
 1. Dave 2 was written around 1990–91, so image formats and compression algorithms are likely to be relatively simple or bespoke.
 2. The file listing clearly shows game assets (levels, sprites, splash images etc.) and filename strings are likely embedded in the executable. Finding references to these strings should be straightforward.
