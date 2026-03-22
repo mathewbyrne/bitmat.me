@@ -1,6 +1,7 @@
 ---
 title: Dangerous Dave 2 Port
 description: Introduction to this hobbyist reverse engineering project.
+permalink: blog/dave-2-port/
 date: 2026-02-15
 tags: engineering,reverse-engineering,ms-dos,dave-2,gaming
 ---
@@ -16,30 +17,30 @@ software library](https://archive.org/details/softwarelibrary_msdos_games) that
 can be played directly in your browser.
 
 However as an exercise in dabbling with decompilation and reverse engineering,
-it seemed to have a lot of appealing properties.  MS-DOS itself is a relatively
-simple and well documented operating system.  The x86 instruction set is still
+it seemed to have a lot of appealing properties. MS-DOS itself is a relatively
+simple and well documented operating system. The x86 instruction set is still
 in service today, runtimes are shallow and easy to spot, and the size of the
 codebases themselves are managable for a single person to explore.
 
 ## Dangerous Dave in the Haunted Mansion
 
 [Dangerous Dave](https://www.dangerousdave.com/saga) and one of it's sequels
-*Dangerous Dave in the Haunted Mansion* (Dave 2) were two of my favourite games
+_Dangerous Dave in the Haunted Mansion_ (Dave 2) were two of my favourite games
 as an 8 year old PC gamer.
 
-Having read *Masters of Doom* a few years ago, I was struck with just how
+Having read _Masters of Doom_ a few years ago, I was struck with just how
 quickly these games were produced given the hardware limitations of the time.
 But even today the quality of these titles is evident.
 
 <img src="./dave-2.gif" alt="Dave 2 title screen" />
 
 So I picked Dave 2, probably just because it's aesthetic and gameplay are a
-little more appealing to me than the simplicity of it's predecessor.  With a
+little more appealing to me than the simplicity of it's predecessor. With a
 game selected, I started to think about how I might proceed.
 
 ## Project goals
 
-This project is not aiming to be an accurate port.  The goal is to have a
+This project is not aiming to be an accurate port. The goal is to have a
 functioning version of the game written in modern, portable C that aims for
 roughly 95% implementation of the original.
 
@@ -112,7 +113,7 @@ to the game.
 
 The first 2 bytes being MZ apparently indicates that this is an executable in
 the [MS-DOS MZ executable
-format](https://en.wikipedia.org/wiki/DOS_MZ_executable).  Something to probably
+format](https://en.wikipedia.org/wiki/DOS_MZ_executable). Something to probably
 read through later.
 
 But browsing through the rest of the binary data, there's nothing that stands
@@ -121,11 +122,12 @@ some things that look like they _might_ be text with some obscure encoding.
 
 <img src="strings.png" alt="Maybe strings?" />
 
-Huh, well that's disheartening, an immediate road-block.  A quick search for
-some of these "strings" doesn't reveal anything obvious.  But it turns out
+Huh, well that's disheartening, an immediate road-block. A quick search for
+some of these "strings" doesn't reveal anything obvious. But it turns out
 there's a common trick DOS engineers used to ship binaries on 3.5" floppy disks.
 
-[More to come&hellip;](../dave-2-2-unpack/dave-2-2-unpack.md)
+[More to come&hellip;](../dave-2-2-unpack/)
 
-[^1]: the feasibility of this remains to be seen, since at least some amount
-of data is encoded in the executable directly
+[^1]:
+    the feasibility of this remains to be seen, since at least some amount
+    of data is encoded in the executable directly

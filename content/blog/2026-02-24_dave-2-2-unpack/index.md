@@ -1,11 +1,12 @@
 ---
 title: Unpacking and Disassembling Dave 2
 description: Taking our core executable and starting the disassembly.
+permalink: blog/dave-2-2-unpack/
 date: 2026-02-24
 tags: engineering,reverse-engineering,ms-dos,dave-2,gaming,ghidra
 ---
 
-So <a href="../dave-2-port/dave-2-port.md">in the last post</a> we got stuck
+So <a href="../dave-2-port/">in the last post</a> we got stuck
 looking at an executable full of garbled strings. In this post I’ll walk
 through how I got past that hurdle and began disassembling the executable. ##
 

@@ -1,6 +1,7 @@
 ---
 title: Decoding the Asset Compression in Dangerous Dave 2
 description: Understanding how the various game assets in Dangerous Dave and the Haunted Mansion are encoded and starting to implement our own loaders.
+permalink: blog/dave-2-compression/
 date: 2026-03-05
 tags: engineering,reverse-engineering,ms-dos,dave-2,gaming,ghidra
 ---
@@ -13,7 +14,7 @@ For the first piece of actual reverse engineering [on this project](../dave-2-po
 
 I had also started looking for resources on Dave 2 to see if anyone else had attempted any reverse engineering efforts before. I found several really good references:
 
-The first is the [Dangerous Dave 2](https://moddingwiki.shikadi.net/wiki/Dangerous_Dave_2) page on the DOS Game Modding Wiki. Some juicy bits here, if a little sparse on detail. Had I found this resource before the [last article](../dave-2-2-unpack/index.md), I would have found a little shortcut:
+The first is the [Dangerous Dave 2](https://moddingwiki.shikadi.net/wiki/Dangerous_Dave_2) page on the DOS Game Modding Wiki. Some juicy bits here, if a little sparse on detail. Had I found this resource before the [last article](../dave-2-2-unpack/), I would have found a little shortcut:
 
 > [...] the executable is compressed with LZ compression, and can be uncompressed with UNLZEXE.
 
